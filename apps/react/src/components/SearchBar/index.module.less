@@ -7,6 +7,8 @@
   --boder: 1px solid #cdcdcd;
   width: var(--width);
   border-radius: var(--border-radius);
+  --placeholder: rgba(23, 26, 29, 0.4);
+  --font-family: PingFangSC-Regular;
   .cr-prefix {
     position: absolute;
     left: 4px;
@@ -17,5 +19,9 @@
     border-radius: var(--border-radius);
     width: 100%;
     border: var(--boder);
+    &::placeholder {
+      color: var(--placeholder);
+      font-family: var(--font-family);
+    }
   }
 }

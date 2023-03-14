@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from './index.module.less';
 import { addListener } from '@contact/utils';
 import { IconSvg } from '@/components/IconSvg';
+import classNames from 'classnames';
 
 interface CSearchBarProp {
   onChange?: (v?: string) => void;
@@ -10,9 +11,10 @@ interface CSearchBarProp {
   suffix?: React.ReactNode;
   placeholder?: string;
   value?: string;
+  className?: string;
 }
 
-export const CrSearchBar: React.FC<CSearchBarProp> = ({ value, placeholder, onChange, onSearch, prefix, suffix }) => {
+export const CrSearchBar: React.FC<CSearchBarProp> = ({ className, value, placeholder, onChange, onSearch, prefix, suffix }) => {
   const [searchIns, setSearchIns] = React.useState<HTMLInputElement | null>(null);
   const searchRef = React.useCallback((node: HTMLInputElement) => {
     if (node) {
@@ -39,7 +41,7 @@ export const CrSearchBar: React.FC<CSearchBarProp> = ({ value, placeholder, onCh
   }, [searchIns])
 
   return (
-    <div ref={searchRef} className={styles['cr-search-bar']}>
+    <div ref={searchRef} className={classNames(className, styles['cr-search-bar'])}>
       <div ref={instance} className={styles['cr-prefix']}>
         {prefix || (
           <IconSvg
