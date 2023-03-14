@@ -1,0 +1,22 @@
+{
+  "name": "@contactjs/root",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "react": "pnpm -F @contact/react --",
+    "sc": "pnpm -F @contact/showcase --"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "pnpm": ">=6.0.0",
+    "npm": "pnpm",
+    "yarn": "pnpm",
+    "node": ">=14.0.0"
+  }
+}

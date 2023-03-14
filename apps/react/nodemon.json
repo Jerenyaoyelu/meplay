@@ -1,0 +1,15 @@
+{
+  "restartable": "rs",
+  "verbose": true,
+  "watch": [
+    "src/",
+    "index.ts"
+  ],
+  "ignore": [
+    "dist/",
+    "node_modules/"
+  ],
+  "delay": "0",
+  "exec": "tsc && vite build",
+  "ext": "ts ejs yml json less tsx"
+}

@@ -1,0 +1,21 @@
+.cr-search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  --border-radius: 6px;
+  --width: 100%;
+  --boder: 1px solid #cdcdcd;
+  width: var(--width);
+  border-radius: var(--border-radius);
+  .cr-prefix {
+    position: absolute;
+    left: 4px;
+  }
+  .cr-search-input {
+    padding: 4px 11px 4px 24px;
+    display: block;
+    border-radius: var(--border-radius);
+    width: 100%;
+    border: var(--boder);
+  }
+}
