@@ -1,0 +1,36 @@
+.ci-wrapper {
+  --box-shadow: 0 0 5vmin #c9c, inset 0 0 0 0.25vmin rgba(0, 0, 0, 0.6);
+  --width: 40px;
+  --height: 40px;
+  --font-size: 20px;
+  --font-family: Arial, Helvetica, sans-serif;
+  --font-weight: bold;
+  --transition: opacity 0.5s ease-in-out;
+
+  .ci-emphasize {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    transition: var(--transition);
+    &.ci-display {
+      opacity: 1;
+    }
+    &.ci-hidden {
+      opacity: 0;
+    }
+  }
+
+  .ci-emphasize-modal {
+    left: calc(50% - var(--width) / 2);
+    top: calc(50% - var(--height) / 2);
+    width: var(--width);
+    height: var(--height);
+    border-radius: 8px;
+    text-align: center;
+    line-height: var(--height);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    font-family: var(--font-family);
+    box-shadow: var(--box-shadow);
+  }
+}

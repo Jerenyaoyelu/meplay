@@ -101,7 +101,7 @@ export class DrawIndex implements IndexProps {
           const t: SelectedDataType = {
             letter,
             x,
-            y,
+            y: ((letterIndex + letterIndex + 1) * this._letterHeight) / 2,
           };
           cb(t);
         }
