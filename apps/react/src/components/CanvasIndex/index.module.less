@@ -6,12 +6,19 @@
   --font-family: Arial, Helvetica, sans-serif;
   --font-weight: bold;
   --transition: opacity 0.5s ease-in-out;
+  &.ci-relative {
+    position: relative;
+  }
 
   .ci-emphasize {
     position: absolute;
     display: block;
     pointer-events: none;
     transition: var(--transition);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+
     &.ci-display {
       opacity: 1;
     }
@@ -20,7 +27,7 @@
     }
   }
 
-  .ci-emphasize-modal {
+  .ci-emphasize-popup {
     left: calc(50% - var(--width) / 2);
     top: calc(50% - var(--height) / 2);
     width: var(--width);
@@ -28,9 +35,19 @@
     border-radius: 8px;
     text-align: center;
     line-height: var(--height);
-    font-size: var(--font-size);
-    font-weight: var(--font-weight);
-    font-family: var(--font-family);
     box-shadow: var(--box-shadow);
+  }
+
+  .ci-emphasize-wechat {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    left: -50px;
+    width: 47px;
+    height: 40px;
+    padding-right: 7px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
   }
 }

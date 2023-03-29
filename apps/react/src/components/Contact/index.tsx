@@ -41,7 +41,7 @@ export const Contact: React.FC<ContactProps> = ({ items }) => {
           }
         </div>
         <CanvasIndex
-          effect='modal'
+          effect='wechat'
           indexOptions={{
             width: 30
           }}
