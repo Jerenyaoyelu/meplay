@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from './index.module.less';
-import { addListener } from '@contact/utils';
+import { addListener } from '@meplay/utils';
 import { IconSvg } from '@/components/IconSvg';
 import classNames from 'classnames';
 

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { DrawIndex, IndexOptions, SelectedDataType } from '@contact/core';
+import { DrawIndex, IndexOptions, SelectedDataType } from '@meplay/core';
 import styles from './index.module.less';
 import classNames from 'classnames';
 import bubbleIcon from './bubble.svg';

@@ -11,8 +11,8 @@
     "watch": "nodemon --config nodemon.json"
   },
   "dependencies": {
-    "@contact/core": "workspace:^1.0.0",
-    "@contact/utils": "workspace:^1.0.0",
+    "@meplay/core": "workspace:^1.0.0",
+    "@meplay/utils": "workspace:^1.0.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "classnames": "^2.3.2",
     "less": "^4.1.3",
