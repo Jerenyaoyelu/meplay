@@ -16,6 +16,8 @@ export default class ThreeWorld {
       canvas: canvasEl,
       ...this.opt,
     });
+    // 修复骰子模糊的问题
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer.shadowMap.enabled = true;
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
