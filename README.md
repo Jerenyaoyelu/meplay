@@ -1,4 +1,36 @@
-## 新建一个 app
+# Meplay Ground
+
+Showcasing a ground of demos or components generated from free mind, doing it with ❤️
+
+## Table of content
+
+- 3D effects
+
+  - Throw Dice: An threejs effect of throwing dice.
+
+- Components
+
+  - ContactIndex: A be-like wechat contact index made with canvas.
+
+## Roadmap
+
+[ ] ContactIndex
+
+## Ideas
+
+If you have any good ideas/implements, feel free to shot me with your wonderful work by making a PR or an issue, or contact me directly with email(luyaoyejeren@gmail.com)
+
+## Run locally
+
+### Install
+
+- `pnpm i`
+
+### Run Homepage
+
+- `pnpm hp dev`
+
+### Create an app
 
 - `with vite`
 
