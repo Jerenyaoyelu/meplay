@@ -13,6 +13,8 @@ interface IndexProps {
   list: string[];
   indexOptions?: Partial<IndexOptions>;
   activeColor?: string;
+  className?: string;
+  emphasizeClassName?: string;
 }
 
 export const CanvasIndex: React.FC<IndexProps> = ({
@@ -21,6 +23,8 @@ export const CanvasIndex: React.FC<IndexProps> = ({
   effect = 'popup',
   duration = 3000,
   activeColor = 'lightgreen',
+  className,
+  emphasizeClassName
 }) => {
   const [ref, setRef] = useState<HTMLCanvasElement | null>(null);
   const canvasRef = useCallback((node: HTMLCanvasElement) => {
@@ -50,7 +54,7 @@ export const CanvasIndex: React.FC<IndexProps> = ({
   }
 
   useEffect(() => {
-    if (ref && !indexRef.current) {
+    if (ref && !indexRef.current && list.length) {
       indexRef.current = new DrawIndex(ref, list || [], indexOptions);
       indexRef.current.on('onselect', ({ letter, x, y }: SelectedDataType) => {
         if (lastActive.current !== letter) {
@@ -72,7 +76,7 @@ export const CanvasIndex: React.FC<IndexProps> = ({
       })
       indexRef.current.drawIndex();
     }
-  }, [ref])
+  }, [ref, list])
 
   useEffect(() => {
     if (timer.current) {
@@ -94,7 +98,7 @@ export const CanvasIndex: React.FC<IndexProps> = ({
   }, [active])
 
   return (
-    <div className={classNames(styles['ci-wrapper'], effect === 'wechat' ? styles['ci-relative'] : '')}>
+    <div className={styles['ci-wrapper']}>
       {effect !== 'base' && effect !== 'custom' && (
         <div
           style={effect === 'wechat' ? {
@@ -102,18 +106,19 @@ export const CanvasIndex: React.FC<IndexProps> = ({
             top: (curOffset.y) + 'px',
             transform: 'translate(0, -20px)'
           } : {}}
-          className={classNames(styles[effect === 'wechat' ? 'ci-emphasize-wechat' : ''], styles[effect === 'popup' ? 'ci-emphasize-popup' : ''], styles['ci-emphasize'], styles[showActive ? 'ci-display' : 'ci-hidden'])}
+          className={classNames(emphasizeClassName, styles[effect === 'wechat' ? 'ci-emphasize-wechat' : ''], styles[effect === 'popup' ? 'ci-emphasize-popup' : ''], styles['ci-emphasize'], styles[showActive ? 'ci-display' : 'ci-hidden'])}
         >
           {active}
         </div>
       )}
-      <canvas
-        style={{
-          touchAction: 'none',
-          backgroundColor: 'transparent'
-        }}
-        ref={canvasRef}
-      ></canvas>
+      <div className={classNames(className, effect === 'wechat' ? styles['ci-relative'] : '')}>
+        <canvas
+          style={{
+            touchAction: 'none',
+          }}
+          ref={canvasRef}
+        ></canvas>
+      </div>
     </div>
   )
 }

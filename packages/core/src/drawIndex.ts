@@ -179,7 +179,8 @@ export class DrawIndex implements IndexProps {
   }
 
   resetText(text: string) {
-    const [x, y] = this._letterMap[text];
+    if (!text) return;
+    const [x, y] = this._letterMap?.[text];
     const width = (this._ctx as CanvasRenderingContext2D)?.measureText(
       text
     ).width;

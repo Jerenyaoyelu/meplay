@@ -1,9 +1,9 @@
 {
-  "name": "@contact/react",
+  "name": "@meplay/react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/contact.es.js",
+  "main": "./dist/meplay.es.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

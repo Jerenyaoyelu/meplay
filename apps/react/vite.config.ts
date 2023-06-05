@@ -15,8 +15,8 @@ export default defineConfig((mode) => {
     build: {
       lib: {
         entry: path.resolve(__dirname, './index.ts'),
-        name: 'contact',
-        fileName: (format) => `contact.${format}.js`,
+        name: 'meplay',
+        fileName: (format) => `meplay.${format}.js`,
       },
       rollupOptions: {
         external: ['react'],
