@@ -10,6 +10,8 @@ importers:
 
   apps/homepage:
     specifiers:
+      '@meplay/react': workspace:^0.0.0
+      '@meplay/utils': workspace:^1.0.0
       '@types/node': 20.2.5
       '@types/react': 18.2.7
       '@types/react-dom': 18.2.4
@@ -27,6 +29,8 @@ importers:
       three: ^0.153.0
       typescript: 5.0.4
     dependencies:
+      '@meplay/react': link:../react
+      '@meplay/utils': link:../../packages/utils
       '@types/node': registry.npmmirror.com/@types/node/20.2.5
       '@types/react': registry.npmmirror.com/@types/react/18.2.7
       '@types/react-dom': registry.npmmirror.com/@types/react-dom/18.2.4

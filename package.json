@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "react": "pnpm -F @contact/react --",
-    "sc": "pnpm -F @contact/showcase --",
+    "react": "pnpm -F @meplay/react --",
     "hp": "pnpm -F homepage --"
   },
   "keywords": [],

@@ -1,7 +1,6 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import DiceWorld, { DiceSettings } from './scene';
-import DiceIcon from '../../assets/svg/dice.svg';
 import Image from 'next/image';
 
 const Dice: React.FC = () => {
@@ -88,7 +87,7 @@ const Dice: React.FC = () => {
         <label htmlFor="">点数：{result}</label>
       </div>
       <button onClick={handleThrow} className="p-4 w-20 h-20 z-10 btn btn-circle btn-outline absolute right-10 bottom-10">
-        <Image src={DiceIcon} alt='' width={40} height={40} />
+        <Image src='/assets/svg/dice.svg' alt='' width={40} height={40} />
       </button>
       <canvas style={{
         width: '100%',

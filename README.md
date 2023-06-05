@@ -1,6 +1,6 @@
 # Meplay Ground
 
-Showcasing a ground of demos or components generated from free mind, doing it with ❤️
+Showcasing a group of demos or components generated from free mind, doing it with ❤️
 
 ## Table of content
 
@@ -14,7 +14,7 @@ Showcasing a ground of demos or components generated from free mind, doing it wi
 
 ## Roadmap
 
-[ ] ContactIndex
+> brainstorming...
 
 ## Ideas
 

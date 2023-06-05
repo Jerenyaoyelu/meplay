@@ -4,8 +4,7 @@ import styles from './index.module.less';
 import classNames from 'classnames';
 import bubbleIcon from './bubble.svg';
 
-
-type IndexEffect = 'base' | 'wechat' | 'popup' | 'custom';
+export type IndexEffect = 'base' | 'wechat' | 'popup' | 'custom';
 
 interface IndexProps {
   effect?: IndexEffect;
@@ -98,20 +97,29 @@ export const CanvasIndex: React.FC<IndexProps> = ({
   }, [active])
 
   return (
-    <div className={styles['ci-wrapper']}>
-      {effect !== 'base' && effect !== 'custom' && (
+    <div className={classNames(styles['ci-wrapper'])}>
+      {effect === 'popup' && (
         <div
-          style={effect === 'wechat' ? {
-            backgroundImage: `url(${bubbleIcon})`,
-            top: (curOffset.y) + 'px',
-            transform: 'translate(0, -20px)'
-          } : {}}
-          className={classNames(emphasizeClassName, styles[effect === 'wechat' ? 'ci-emphasize-wechat' : ''], styles[effect === 'popup' ? 'ci-emphasize-popup' : ''], styles['ci-emphasize'], styles[showActive ? 'ci-display' : 'ci-hidden'])}
+          className={classNames(emphasizeClassName, styles[effect === 'popup' ? 'ci-emphasize-popup' : ''], styles['ci-emphasize'], styles[showActive ? 'ci-display' : 'ci-hidden'])}
         >
           {active}
         </div>
       )}
       <div className={classNames(className, effect === 'wechat' ? styles['ci-relative'] : '')}>
+        {
+          effect === 'wechat' && (
+            <div
+              style={{
+                backgroundImage: `url(${bubbleIcon})`,
+                top: (curOffset.y) + 'px',
+                transform: 'translate(0, -20px)'
+              }}
+              className={classNames(styles['ci-emphasize-wechat'], styles['ci-emphasize'], styles[showActive ? 'ci-display' : 'ci-hidden'], emphasizeClassName)}
+            >
+              {active}
+            </div>
+          )
+        }
         <canvas
           style={{
             touchAction: 'none',
