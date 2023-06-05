@@ -15,7 +15,7 @@ importers:
   apps/homepage:
     dependencies:
       '@meplay/react':
-        specifier: 1.0.0
+        specifier: 1.0.1
         version: link:../react
       '@types/node':
         specifier: 20.2.5
@@ -70,10 +70,10 @@ importers:
   apps/react:
     dependencies:
       '@meplay/core':
-        specifier: workspace:^1.0.0
+        specifier: 1.0.0
         version: link:../../packages/core
       '@meplay/utils':
-        specifier: workspace:^1.0.0
+        specifier: 1.0.0
         version: link:../../packages/utils
       '@rollup/plugin-typescript':
         specifier: ^11.0.0
