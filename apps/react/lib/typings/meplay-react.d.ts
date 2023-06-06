@@ -12,7 +12,4 @@ export interface IndexProps {
   className?: string;
   emphasizeClassName?: string;
 }
-
-declare module '@meplay/react' {
-  export function CanvasIndex(props: IndexProps): ReactNode;
-}
+export declare function CanvasIndex(props: IndexProps): JSX.Element;
