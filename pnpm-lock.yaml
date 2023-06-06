@@ -15,7 +15,7 @@ importers:
   apps/homepage:
     dependencies:
       '@meplay/react':
-        specifier: 1.0.4
+        specifier: 1.0.5
         version: link:../react/lib
       '@types/node':
         specifier: 20.2.5
