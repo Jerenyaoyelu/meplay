@@ -1,13 +1,10 @@
 {
   "name": "@meplay/react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
-  "main": "./dist/meplay.es.js",
+  "main": "./meplay.es.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build && cp -R dist/ lib/",
-    "preview": "vite preview",
-    "watch": "nodemon --config nodemon.json"
+    "dev": "vite"
   },
   "dependencies": {
     "@meplay/core": "1.0.0",
