@@ -1,11 +1,12 @@
 {
   "name": "@meplay/react",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "type": "module",
-  "main": "./dist/meplay.es.js",
+  "main": "./lib/meplay.es.js",
+  "types": "typings/meplay-react.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp -R dist/ lib/",
+    "build": "tsc && vite build && rm -rf lib/ && cp -R dist/ lib/ && cp -R typings/ lib/typings/ && cp package.json lib/",
     "preview": "vite preview",
     "watch": "nodemon --config nodemon.json"
   },

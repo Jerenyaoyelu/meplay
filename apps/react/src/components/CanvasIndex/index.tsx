@@ -1,20 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { DrawIndex, IndexOptions, SelectedDataType } from '@meplay/core';
+import { DrawIndex, SelectedDataType } from '@meplay/core';
 import styles from './index.module.less';
 import classNames from 'classnames';
 import bubbleIcon from './bubble.svg';
-
-export type IndexEffect = 'base' | 'wechat' | 'popup' | 'custom';
-
-interface IndexProps {
-  effect?: IndexEffect;
-  duration?: number;
-  list: string[];
-  indexOptions?: Partial<IndexOptions>;
-  activeColor?: string;
-  className?: string;
-  emphasizeClassName?: string;
-}
+import { IndexProps } from '../../../typings/meplay-react';
 
 export const CanvasIndex: React.FC<IndexProps> = ({
   list,

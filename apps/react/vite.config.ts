@@ -24,6 +24,8 @@ export default defineConfig((mode) => {
           globals: {
             react: 'react',
           },
+          // 排除类型声明文件的打包
+          exclude: ['typings/**/*.d.ts'],
         },
         plugins: [
           typescript({
