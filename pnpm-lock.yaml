@@ -15,7 +15,7 @@ importers:
   apps/homepage:
     dependencies:
       '@meplay/react':
-        specifier: 1.0.2
+        specifier: 1.0.4
         version: link:../react/lib
       '@types/node':
         specifier: 20.2.5
@@ -70,7 +70,7 @@ importers:
   apps/react:
     dependencies:
       '@meplay/core':
-        specifier: 1.0.0
+        specifier: 1.0.1
         version: link:../../packages/core
       '@meplay/utils':
         specifier: 1.0.0
@@ -116,7 +116,7 @@ importers:
   apps/react/lib:
     dependencies:
       '@meplay/core':
-        specifier: 1.0.0
+        specifier: 1.0.1
         version: link:../../../packages/core
       '@meplay/utils':
         specifier: 1.0.0
