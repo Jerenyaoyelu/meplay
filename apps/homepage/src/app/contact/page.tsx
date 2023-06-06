@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { CanvasIndex, IndexEffect } from '@meplay/react';
 import { contactList, ContactItemType } from './data';
 import { generateRandomColor } from '@/utils/helper';
-import '@meplay/react/dist/style.css';
+import '@meplay/react/style.css';
 
 interface ContactListItem {
   initial: string;
