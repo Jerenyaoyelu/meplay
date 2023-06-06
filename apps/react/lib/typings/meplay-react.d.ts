@@ -13,3 +13,11 @@ export interface IndexProps {
   emphasizeClassName?: string;
 }
 export declare function CanvasIndex(props: IndexProps): JSX.Element;
+
+export interface IconProp {
+  name: string;
+  url: string;
+  size?: number;
+}
+
+export declare function IconSvg(props: IconProp): JSX.Element;

@@ -1,6 +1,6 @@
 {
   "name": "@meplay/react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "main": "./meplay.es.js",
   "types": "typings/meplay-react.d.ts",

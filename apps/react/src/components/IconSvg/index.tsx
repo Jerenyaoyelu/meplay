@@ -1,11 +1,6 @@
 import { useEffect } from 'react';
 import styles from './index.module.less';
-
-interface IconProp {
-  name: string;
-  url: string;
-  size?: number;
-}
+import { IconProp } from 'typings/meplay-react';
 
 export const IconSvg: React.FC<IconProp> = ({ size, url, name }) => {
   let control = true;
