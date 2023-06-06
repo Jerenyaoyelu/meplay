@@ -1,10 +1,4 @@
-import { IndexOptions, SelectedDataType } from './types';
-
-export interface IndexProps {
-  canvas: HTMLCanvasElement;
-  options?: IndexOptions;
-  drawIndex: () => void;
-}
+import { IndexProps, IndexOptions, SelectedDataType } from '../core';
 
 type IndexEvent = 'onselect';
 
