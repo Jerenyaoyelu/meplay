@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "apps/homepage",
+      "src": "./apps/homepage",
       "use": "@vercel/next"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "apps/homepage/$1"
+      "dest": "./apps/homepage/$1"
     }
   ],
   "github": {
