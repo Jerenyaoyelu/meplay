@@ -16,7 +16,7 @@ export class DrawIndex implements IndexProps {
     fillStyle: '#000',
   };
 
-  private _listeners: ((data?: SelectedDataType) => void)[] = [];
+  private _listeners: ((data: SelectedDataType) => void)[] = [];
 
   private _down: boolean = false;
 
@@ -83,7 +83,7 @@ export class DrawIndex implements IndexProps {
     });
   }
 
-  on(type: IndexEvent, cb: (data?: SelectedDataType) => void) {
+  on(type: IndexEvent, cb: (data: SelectedDataType) => void) {
     if (type === 'onselect') {
       this._listeners.push(cb);
     }
