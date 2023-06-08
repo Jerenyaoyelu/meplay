@@ -3,16 +3,18 @@ import { DrawIndex, SelectedDataType } from '@meplay/core';
 import styles from './index.module.less';
 import classNames from 'classnames';
 import bubbleIcon from './bubble.svg';
-import { IndexProps } from '../../../typings/meplay-react';
+import { IndexEffect, IndexProps } from '../../../typings/meplay-react';
 
 export const CanvasIndex: React.FC<IndexProps> = ({
   list,
   indexOptions,
   effect = 'popup',
-  duration = 3000,
+  duration = 2000,
   activeColor = 'lightgreen',
   className,
-  emphasizeClassName
+  emphasizeClassName,
+  onClickLetter,
+  onDrawIndex
 }) => {
   const [ref, setRef] = useState<HTMLCanvasElement | null>(null);
   const canvasRef = useCallback((node: HTMLCanvasElement) => {
@@ -25,13 +27,14 @@ export const CanvasIndex: React.FC<IndexProps> = ({
   const [showActive, setShowActive] = useState<boolean>(false);
   const [curOffset, setCurOffset] = useState<{ x: number, y: number }>({ x: 0, y: 0 })
 
-  const indexRef = useRef<any>(null);
+  const indexRef = useRef<DrawIndex | null>(null);
   const timer = useRef<any>(null);
 
   const lastActive = useRef<string>('');
 
+  const effectRef = useRef<IndexEffect>(effect)
+
   const handleClick = (c: string) => {
-    if (effect === 'custom') return;
     const el = document.getElementById(c);
     if (!el) return;
     el.scrollIntoView({
@@ -42,23 +45,32 @@ export const CanvasIndex: React.FC<IndexProps> = ({
   }
 
   useEffect(() => {
+    effectRef.current = effect;
+  }, [effect])
+
+  useEffect(() => {
     if (ref && !indexRef.current && list.length) {
       indexRef.current = new DrawIndex(ref, list || [], indexOptions);
-      indexRef.current.on('onselect', ({ letter, x, y }: SelectedDataType) => {
+      onDrawIndex?.(indexRef.current);
+      indexRef.current?.on('onselect', ({ letter, x, y }: SelectedDataType) => {
         if (lastActive.current !== letter) {
           // 将上一个字母恢复颜色
           if (lastActive.current) {
-            indexRef.current.resetText(lastActive.current);
+            indexRef.current?.resetText(lastActive.current);
           }
           lastActive.current = letter;
           setActive(letter);
-          if (effect === 'wechat') {
-            setCurOffset({ x, y });
-            indexRef.current.activityWeChatEffectActiveText(activeColor, letter);
+          if (effectRef.current === 'custom') {
+            onClickLetter?.(letter);
           } else {
-            indexRef.current.changeTextColor(activeColor, letter);
+            if (effectRef.current === 'wechat') {
+              setCurOffset({ x, y });
+              indexRef.current?.activityWeChatEffectActiveText(activeColor, letter);
+            } else {
+              indexRef.current?.changeTextColor(activeColor, letter);
+            }
+            setShowActive(true);
           }
-          setShowActive(true);
           handleClick(letter);
         }
       })
@@ -73,13 +85,13 @@ export const CanvasIndex: React.FC<IndexProps> = ({
       // 重新设置定时器
       if (showActive) {
         timer.current = setTimeout(() => {
-          indexRef.current.resetText(active);
+          indexRef.current?.resetText(active);
           setShowActive(false);
         }, duration)
       }
     } else {
       timer.current = setTimeout(() => {
-        indexRef.current.resetText(active);
+        indexRef.current?.resetText(active);
         setShowActive(false);
       }, duration)
     }

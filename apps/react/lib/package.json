@@ -1,17 +1,17 @@
 {
   "name": "@meplay/react",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "type": "module",
   "main": "./meplay.es.js",
   "types": "typings/meplay-react.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && rm -rf lib/ && cp -R dist/ lib/ && cp -R typings/ lib/typings/ && cp package.json lib/",
+    "build": "tsc && vite build && rm -rf lib/ && cp -R dist/ lib/ && cp -R typings/ lib/typings/ && cp package.json lib/ && cp README.md lib/",
     "preview": "vite preview",
     "watch": "nodemon --config nodemon.json"
   },
   "dependencies": {
-    "@meplay/core": "1.0.1",
+    "@meplay/core": "1.0.2",
     "@meplay/utils": "1.0.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "classnames": "^2.3.2",

@@ -1,4 +1,4 @@
-import { IndexOptions } from '@meplay/core';
+import { DrawIndex, IndexOptions } from '@meplay/core';
 import { ReactNode } from 'react';
 
 export type IndexEffect = 'base' | 'wechat' | 'popup' | 'custom';
@@ -11,6 +11,8 @@ export interface IndexProps {
   activeColor?: string;
   className?: string;
   emphasizeClassName?: string;
+  onClickLetter?: (v: string) => void;
+  onDrawIndex?: (index: DrawIndex) => void;
 }
 export declare function CanvasIndex(props: IndexProps): JSX.Element;
 
