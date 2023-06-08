@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@meplay/react": "1.0.5",
+    "@meplay/react": "1.0.8",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",

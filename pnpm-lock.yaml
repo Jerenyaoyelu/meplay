@@ -15,7 +15,7 @@ importers:
   apps/homepage:
     dependencies:
       '@meplay/react':
-        specifier: 1.0.5
+        specifier: 1.0.8
         version: link:../react/lib
       '@types/node':
         specifier: 20.2.5
@@ -70,7 +70,7 @@ importers:
   apps/react:
     dependencies:
       '@meplay/core':
-        specifier: 1.0.1
+        specifier: 1.0.2
         version: link:../../packages/core
       '@meplay/utils':
         specifier: 1.0.0
@@ -116,7 +116,7 @@ importers:
   apps/react/lib:
     dependencies:
       '@meplay/core':
-        specifier: 1.0.1
+        specifier: 1.0.2
         version: link:../../../packages/core
       '@meplay/utils':
         specifier: 1.0.0
@@ -3339,6 +3339,7 @@ packages:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==, registry: https://registry.npmjs.org/, tarball: https://registry.npmmirror.com/graceful-fs/-/graceful-fs-4.2.10.tgz}
     name: graceful-fs
     version: 4.2.10
+    requiresBuild: true
     dev: false
 
   registry.npmmirror.com/graphemer@1.4.0:

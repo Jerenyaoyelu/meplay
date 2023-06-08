@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CanvasIndex, IndexEffect } from '@meplay/react';
 import { contactList, ContactItemType } from './data';
 import { generateRandomColor } from '@/utils/helper';
@@ -15,12 +15,21 @@ const Contact: React.FC = () => {
   const [list, setList] = useState<ContactListType>([]);
   const [indexList, setIndexList] = useState<string[]>([]);
   const [mode, setMode] = useState<IndexEffect>('wechat');
+  const modeRef = useRef<IndexEffect>(mode);
+  const [customActice, setCustomActive] = useState<string>('');
 
   useEffect(() => {
     const { initials, list: res } = washData(contactList);
     setList(res);
     setIndexList(initials);
   }, [])
+
+  useEffect(() => {
+    modeRef.current = mode;
+    if (mode !== 'custom') {
+      setCustomActive('');
+    }
+  }, [mode])
 
   const handleRadio = (v: IndexEffect) => {
     setMode(v);
@@ -41,6 +50,15 @@ const Contact: React.FC = () => {
 
   return (
     <div className="h-full relative flex justify-center items-center">
+      {
+        mode === 'custom' && (
+          <div className="toast toast-top toast-start">
+            <div className="alert alert-info">
+              <span>自定义模式：激活了字母 {customActice}</span>
+            </div>
+          </div>
+        )
+      }
       <div className='absolute top-[24px] right-[24px]'>
         {
           effects.map((item, index) => {
@@ -77,7 +95,11 @@ const Contact: React.FC = () => {
               })
             }
           </div>
-          <CanvasIndex effect={mode} className='!absolute top-[15%] right-0' list={indexList} />
+          <CanvasIndex onClickLetter={(v) => {
+            if (modeRef.current === 'custom') {
+              setCustomActive(v);
+            }
+          }} effect={mode} className='!absolute top-[15%] right-0' list={indexList} />
         </div>
       </div>
     </div>
