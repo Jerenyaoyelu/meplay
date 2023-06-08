@@ -1,6 +1,6 @@
 {
   "name": "@meplay/react",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "main": "./meplay.es.js",
   "types": "typings/meplay-react.d.ts",
@@ -10,6 +10,17 @@
     "preview": "vite preview",
     "watch": "nodemon --config nodemon.json"
   },
+  "keywords": [
+    "react",
+    "contact index",
+    "wechat-like",
+    "仿微信通讯录"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jerenyaoyelu/meplay"
+  },
+  "homepage": "https://meplay.vercel.app/contact",
   "dependencies": {
     "@meplay/core": "1.0.2",
     "@meplay/utils": "1.0.0",
