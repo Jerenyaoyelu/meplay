@@ -23,9 +23,11 @@ export const PageCarousel: React.FC<PageCarouselProp> = ({ pages, className, onC
         {
           pages.map((p, i) => {
             return (
-              <div onClick={async () => {
-                await router.push(p.path);
-                onClick?.();
+              <div onClick={() => {
+                router.push(p.path);
+                setTimeout(() => {
+                  onClick?.();
+                }, 0)
               }} id={'page-' + i} key={i} className="carousel-item w-full h-[200px]">
                 <Image width={400} height={200} src={p.cover} alt="" className="w-full" />
               </div>
