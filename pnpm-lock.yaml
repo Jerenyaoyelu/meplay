@@ -14,9 +14,33 @@ importers:
 
   apps/homepage:
     dependencies:
+      '@babylonjs/core':
+        specifier: ^5.19.0
+        version: 5.19.0
+      '@babylonjs/gui':
+        specifier: ^5.19.0
+        version: 5.19.0(@babylonjs/core@5.19.0)
+      '@babylonjs/gui-editor':
+        specifier: ^5.19.0
+        version: 5.19.0(@babylonjs/core@5.19.0)(@babylonjs/gui@5.19.0)(@types/react-dom@18.2.4)(@types/react@18.2.7)
+      '@babylonjs/inspector':
+        specifier: ^5.19.0
+        version: 5.19.0(@babylonjs/core@5.19.0)(@babylonjs/gui-editor@5.19.0)(@babylonjs/gui@5.19.0)(@babylonjs/loaders@5.19.0)(@babylonjs/materials@5.19.0)(@babylonjs/serializers@5.19.0)(@types/react-dom@18.2.4)(@types/react@18.2.7)
+      '@babylonjs/loaders':
+        specifier: ^5.19.0
+        version: 5.19.0(@babylonjs/core@5.19.0)(babylonjs-gltf2interface@5.57.1)
+      '@babylonjs/materials':
+        specifier: ^5.19.0
+        version: 5.19.0(@babylonjs/core@5.19.0)
+      '@babylonjs/serializers':
+        specifier: ^5.19.0
+        version: 5.19.0(@babylonjs/core@5.19.0)(babylonjs-gltf2interface@5.57.1)
       '@meplay/react':
         specifier: 1.0.8
         version: link:../react/lib
+      '@meplay/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@types/node':
         specifier: 20.2.5
         version: registry.npmmirror.com/@types/node@20.2.5
@@ -29,6 +53,9 @@ importers:
       autoprefixer:
         specifier: 10.4.14
         version: registry.npmmirror.com/autoprefixer@10.4.14(postcss@8.4.24)
+      babylon:
+        specifier: ^6.18.0
+        version: 6.18.0
       cannon-es:
         specifier: ^0.20.0
         version: registry.npmmirror.com/cannon-es@0.20.0
@@ -393,6 +420,91 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
+  /@babylonjs/core@5.19.0:
+    resolution: {integrity: sha512-ZnIxZsyiF4qsmbJiwnAT3E/sqSHmth4TWqqZ8pRPMk1a9K/I6kh2JCn1QY4ant0dnH4zTAJL+4iaYhFzFPiQlg==}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+
+  /@babylonjs/gui-editor@5.19.0(@babylonjs/core@5.19.0)(@babylonjs/gui@5.19.0)(@types/react-dom@18.2.4)(@types/react@18.2.7):
+    resolution: {integrity: sha512-raxV14p36I95Iu8mkQWxa/wiKTF6xGNx+l4UbxP6XpwjxUdnjgI3Le8lmiQYczsKD69FuCt4SqwQWSw5GOxFmw==}
+    peerDependencies:
+      '@babylonjs/core': ^5.0.0
+      '@babylonjs/gui': ^5.0.0
+      '@types/react': '>=16.7.3'
+      '@types/react-dom': '>=16.0.9'
+    dependencies:
+      '@babylonjs/core': 5.19.0
+      '@babylonjs/gui': 5.19.0(@babylonjs/core@5.19.0)
+      '@types/react': registry.npmmirror.com/@types/react@18.2.7
+      '@types/react-dom': registry.npmmirror.com/@types/react-dom@18.2.4
+    dev: false
+
+  /@babylonjs/gui@5.19.0(@babylonjs/core@5.19.0):
+    resolution: {integrity: sha512-ArTWqfdykeVXDRm3NwTxGchjImwV4nieBr9F2WBvv4PNwwy6wAkIYrbglqeocHCyz3xM0+/1BfAa7Th9BE/cng==}
+    peerDependencies:
+      '@babylonjs/core': ^5.0.0
+    dependencies:
+      '@babylonjs/core': 5.19.0
+      tslib: 2.5.0
+    dev: false
+
+  /@babylonjs/inspector@5.19.0(@babylonjs/core@5.19.0)(@babylonjs/gui-editor@5.19.0)(@babylonjs/gui@5.19.0)(@babylonjs/loaders@5.19.0)(@babylonjs/materials@5.19.0)(@babylonjs/serializers@5.19.0)(@types/react-dom@18.2.4)(@types/react@18.2.7):
+    resolution: {integrity: sha512-2FU5I6p89GH2SRz0+nMVJS6BhUapWk1g6pebWMi9PwlXZ2MJg1pamdY7zVuYJuE/ft2w8XLk3Kv+vpoxjWJOAw==}
+    peerDependencies:
+      '@babylonjs/core': ^5.0.0
+      '@babylonjs/gui': ^5.0.0
+      '@babylonjs/gui-editor': ^5.0.0
+      '@babylonjs/loaders': ^5.0.0
+      '@babylonjs/materials': ^5.0.0
+      '@babylonjs/serializers': ^5.0.0
+      '@types/react': '>=16.7.3'
+      '@types/react-dom': '>=16.0.9'
+    dependencies:
+      '@babylonjs/core': 5.19.0
+      '@babylonjs/gui': 5.19.0(@babylonjs/core@5.19.0)
+      '@babylonjs/gui-editor': 5.19.0(@babylonjs/core@5.19.0)(@babylonjs/gui@5.19.0)(@types/react-dom@18.2.4)(@types/react@18.2.7)
+      '@babylonjs/loaders': 5.19.0(@babylonjs/core@5.19.0)(babylonjs-gltf2interface@5.57.1)
+      '@babylonjs/materials': 5.19.0(@babylonjs/core@5.19.0)
+      '@babylonjs/serializers': 5.19.0(@babylonjs/core@5.19.0)(babylonjs-gltf2interface@5.57.1)
+      '@fortawesome/fontawesome-svg-core': 6.4.0
+      '@fortawesome/free-regular-svg-icons': 6.4.0
+      '@fortawesome/free-solid-svg-icons': 6.4.0
+      '@types/react': registry.npmmirror.com/@types/react@18.2.7
+      '@types/react-dom': registry.npmmirror.com/@types/react-dom@18.2.4
+    dev: false
+
+  /@babylonjs/loaders@5.19.0(@babylonjs/core@5.19.0)(babylonjs-gltf2interface@5.57.1):
+    resolution: {integrity: sha512-8+Crf9udgDS3a70S54wevukJPMsHIMf4FSchwdvMyb5goktNf0T3+fptMe8UVdkmcCztYqIgCkBrUAtHRVQksA==}
+    peerDependencies:
+      '@babylonjs/core': ^5.0.0
+      babylonjs-gltf2interface: ^5.0.0
+    dependencies:
+      '@babylonjs/core': 5.19.0
+      babylonjs-gltf2interface: 5.57.1
+      tslib: 2.5.0
+    dev: false
+
+  /@babylonjs/materials@5.19.0(@babylonjs/core@5.19.0):
+    resolution: {integrity: sha512-D82D0LMTEMVKzAWf/XxzL6Wm+1BBGLZafQuhzFjr04Xv3O78Wxkut+ncGqtD9M8outy0Nt9qJcJSh1e6hfXwgA==}
+    peerDependencies:
+      '@babylonjs/core': ^5.0.0
+    dependencies:
+      '@babylonjs/core': 5.19.0
+      tslib: 2.5.0
+    dev: false
+
+  /@babylonjs/serializers@5.19.0(@babylonjs/core@5.19.0)(babylonjs-gltf2interface@5.57.1):
+    resolution: {integrity: sha512-qIZmTnjyekG1Q9Lbbb8IKmWAia6YopGHZNHXUSL7lxNDN0ie1bEzdzvgPxwfFlgiZJc6gfcyqXGCjVc67J3MnQ==}
+    peerDependencies:
+      '@babylonjs/core': ^5.0.0
+      babylonjs-gltf2interface: ^5.0.0
+    dependencies:
+      '@babylonjs/core': 5.19.0
+      babylonjs-gltf2interface: 5.57.1
+      tslib: 2.5.0
+    dev: false
+
   /@esbuild/android-arm64@0.16.17:
     resolution: {integrity: sha512-MIGl6p5sc3RDTLLkYL1MyL8BMRN4tLMRCn+yRJJmEDvYZ2M7tmAf80hx1kbNEUX2KJ50RRtxZ4JHLvCfuB6kBg==}
     engines: {node: '>=12'}
@@ -590,6 +702,36 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fortawesome/fontawesome-common-types@6.4.0:
+    resolution: {integrity: sha512-HNii132xfomg5QVZw0HwXXpN22s7VBHQBv9CeOu9tfJnhsWQNd2lmTNi8CSrnw5B+5YOmzu1UoPAyxaXsJ6RgQ==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  /@fortawesome/fontawesome-svg-core@6.4.0:
+    resolution: {integrity: sha512-Bertv8xOiVELz5raB2FlXDPKt+m94MQ3JgDfsVbrqNpLU9+UE2E18GKjLKw+d3XbeYPqg1pzyQKGsrzbw+pPaw==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.4.0
+    dev: false
+
+  /@fortawesome/free-regular-svg-icons@6.4.0:
+    resolution: {integrity: sha512-ZfycI7D0KWPZtf7wtMFnQxs8qjBXArRzczABuMQqecA/nXohquJ5J/RCR77PmY5qGWkxAZDxpnUFVXKwtY/jPw==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.4.0
+    dev: false
+
+  /@fortawesome/free-solid-svg-icons@6.4.0:
+    resolution: {integrity: sha512-kutPeRGWm8V5dltFP1zGjQOEAzaLZj4StdQhWVZnfGFCvAPVvHh8qk5bRrU4KXnRRRNni5tKQI9PBAdI6MP8nQ==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.4.0
+    dev: false
 
   /@jridgewell/gen-mapping@0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
@@ -795,6 +937,15 @@ packages:
     dependencies:
       color-convert: 1.9.3
     dev: true
+
+  /babylon@6.18.0:
+    resolution: {integrity: sha512-q/UEjfGJ2Cm3oKV71DJz9d25TPnq5rhBVL2Q4fA5wcC3jcrdn7+SssEybFIxwAvvP+YCsCYNKughoF33GxgycQ==}
+    hasBin: true
+    dev: false
+
+  /babylonjs-gltf2interface@5.57.1:
+    resolution: {integrity: sha512-RZnaKfJ6Q/AYLdIjBYMRxCW/HPEC8jabAL1U8wJ0KVziw6NSbSV6S80S22fUCPTyaZ7nCekn1TYg1IPmJ/eA6w==}
+    dev: false
 
   /browserslist@4.21.5:
     resolution: {integrity: sha512-tUkiguQGW7S3IhB7N+c2MV/HZPSCPAAiYBZXLsBhFB/PCy6ZKKsZrmBayHV9fdGV/ARIfJ14NkxKzRDjvp7L6w==}

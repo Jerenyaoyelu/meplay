@@ -10,7 +10,7 @@ export const Nav = () => {
   const [show, setShow] = useState<boolean>(false);
 
   return (
-    <div className={`${show ? 'bg-zinc-400' : ''} flex justify-center absolute top-0 left-0 w-full z-20`}>
+    <div className={`${show ? 'bg-zinc-400' : ''} flex justify-center absolute top-0 left-0 w-screen z-20`}>
       {
         show ? (
           <>

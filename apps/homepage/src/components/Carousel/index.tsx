@@ -19,7 +19,7 @@ export const PageCarousel: React.FC<PageCarouselProp> = ({ pages, className, onC
 
   return (
     <div className={className + ' w-fit h-fit'}>
-      <div className="carousel w-[400px] rounded-box">
+      <div className="carousel rounded-box">
         {
           pages.map((p, i) => {
             return (
@@ -28,7 +28,7 @@ export const PageCarousel: React.FC<PageCarouselProp> = ({ pages, className, onC
                 setTimeout(() => {
                   onClick?.();
                 }, 0)
-              }} id={'page-' + i} key={i} className="carousel-item w-full h-[200px]">
+              }} id={'page-' + i} key={i} className="carousel-item h-[200px]">
                 <Image width={400} height={200} src={p.cover} alt="" className="w-full" />
               </div>
             )
